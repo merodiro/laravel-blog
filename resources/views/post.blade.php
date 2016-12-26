@@ -26,7 +26,7 @@
                 <!-- Pager -->
                 <ul class="pager">
                     <li class="next">
-                        <a href="{{ '/' }}">Back to home &rarr;</a>
+                        <a href="{{ '/' }}"> Back to home </a>
                     </li>
                 </ul>
             </div>
