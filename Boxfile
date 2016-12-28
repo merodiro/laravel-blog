@@ -2,7 +2,8 @@ global:
   env:
     - APP_ENV: production
     - APP_DEBUG: false
-    - APP_KEY: base64:6LpyUjrNYzdd6WX2RKG4mkQoBoZ8Mh1QII9Ndl5x7uA=
+    - APP_KEY: SomeRandomStringWith32Characters
+    - DB_CONNECTION: mysql
     - DB_HOST: 'MAP:DATABASE1_HOST'
     - DB_DATABASE: 'MAP:DATABASE1_NAME'
     - DB_USERNAME: 'MAP:DATABASE1_USER'
