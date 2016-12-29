@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use TCG\Voyager\Models\Page;
 use TCG\Voyager\Models\Post;
-
 
 class HomeController extends Controller
 {
@@ -19,6 +17,7 @@ class HomeController extends Controller
     {
         $posts = Post::orderBy('created_at', 'desc')
                ->simplePaginate(3);
+
         return view('home', compact('posts'));
     }
 
@@ -30,6 +29,7 @@ class HomeController extends Controller
                 return view('page', compact('page'));
             }
         }
+
         return Redirect::back();
     }
 
@@ -41,6 +41,7 @@ class HomeController extends Controller
                 return view('post', compact('post'));
             }
         }
+
         return Redirect::back();
     }
 }
