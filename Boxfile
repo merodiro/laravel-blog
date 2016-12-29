@@ -15,11 +15,13 @@ global:
 
 build:
   exec:
+    - 'php artisan down'
     - 'composer install --no-interaction --prefer-source'
     - 'npm install'
   after_exec:
     - 'composer dump-autoload --optimize'
     - 'node_modules/.bin/gulp'
+    - 'php artisan up'
   lib_dirs:
     - vendor
     - node_modules
