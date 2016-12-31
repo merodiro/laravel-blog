@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Redirect;
 use TCG\Voyager\Models\Page;
 use TCG\Voyager\Models\Post;
@@ -15,8 +16,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderBy('created_at', 'desc')
-               ->simplePaginate(5);
+        $posts = Cache::remember('posts', 60, function () {
+            return Post::orderBy('created_at', 'desc')
+                ->simplePaginate(5);
+            });
+
+        // $posts = Post::orderBy('created_at', 'desc')
+        //        ->simplePaginate(5);
 
         return view('home', compact('posts'));
     }
