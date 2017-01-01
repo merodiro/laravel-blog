@@ -32,7 +32,7 @@
                                 {{ $post->excerpt }}
                             </h3>
                         </a>
-                        <p class="post-meta">Posted by <a href="#">{{ \App\User::find($post->author_id)->name }}</a> {{ $post->created_at }}</p>
+                        <p class="post-meta">Posted by <a href="#">{{ \App\User::find($post->author_id)->name }}</a> {{ $post->created_at->diffForHumans() }}</p>
                     </div>
                 <hr>
                 @endforeach
