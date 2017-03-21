@@ -13,5 +13,4 @@ class ExampleTest extends TestCase
         $this->visit('/')
              ->see('Awesome Blog');
     }
-
 }
