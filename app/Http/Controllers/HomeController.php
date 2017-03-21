@@ -19,7 +19,7 @@ class HomeController extends Controller
         $posts = Cache::remember('posts', 60, function () {
             return Post::orderBy('created_at', 'desc')
                 ->simplePaginate(5);
-            });
+        });
 
         // $posts = Post::orderBy('created_at', 'desc')
         //        ->simplePaginate(5);
